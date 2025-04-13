@@ -83,16 +83,16 @@
 ## Phase 4: Deployment (Days 8-9)
 
 - [ ] **Deployment preparation**
-  - [ ] Create Dockerfile
+  - [x] Create Dockerfile
   - [x] Create requirements.txt
-  - [ ] Set up Procfile for Heroku (if using)
+  - [x] Set up Procfile for Heroku (if using)
   - [x] Prepare database migration for production
 
 - [ ] **Environment configuration**
-  - [ ] Set up production environment variables
-  - [ ] Configure PostgreSQL for production
-  - [ ] Configure Gunicorn as WSGI server
-  - [ ] Set up error logging for production
+  - [x] Set up production environment variables
+  - [x] Configure PostgreSQL for production
+  - [x] Configure Gunicorn as WSGI server
+  - [x] Set up error logging for production
 
 - [ ] **Deployment process**
   - [ ] Deploy to selected platform

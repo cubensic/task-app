@@ -12,6 +12,10 @@ def create_app(config_name='default'):
     app = Flask(__name__)
     app.config.from_object(config[config_name])
     
+    # Initialize app with config-specific setup
+    if hasattr(config[config_name], 'init_app'):
+        config[config_name].init_app(app)
+    
     # Initialize extensions
     db.init_app(app)
     migrate.init_app(app, db)

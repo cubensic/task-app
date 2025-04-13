@@ -28,6 +28,34 @@ class ProductionConfig(Config):
     """Production configuration."""
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
     DEBUG = False
+    LOG_LEVEL = os.environ.get('LOG_LEVEL', 'ERROR')
+    LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT', 'false').lower() == 'true'
+    
+    @classmethod
+    def init_app(cls, app):
+        """Initialize production application."""
+        import logging
+        from logging.handlers import RotatingFileHandler
+        
+        # Configure logging to file
+        if not cls.LOG_TO_STDOUT:
+            if not os.path.exists('logs'):
+                os.mkdir('logs')
+            file_handler = RotatingFileHandler('logs/tasks_app.log', maxBytes=10240, backupCount=10)
+            file_handler.setFormatter(logging.Formatter(
+                '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'
+            ))
+            file_handler.setLevel(getattr(logging, cls.LOG_LEVEL))
+            app.logger.addHandler(file_handler)
+        
+        # Log to stdout
+        else:
+            stream_handler = logging.StreamHandler()
+            stream_handler.setLevel(getattr(logging, cls.LOG_LEVEL))
+            app.logger.addHandler(stream_handler)
+        
+        app.logger.setLevel(getattr(logging, cls.LOG_LEVEL))
+        app.logger.info('Tasks App startup')
 
 # Configuration dictionary to easily switch between environments
 config = {
