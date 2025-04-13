@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request, render_template
+from flask import Blueprint, jsonify, request, render_template, abort
 from app.models import db, Task
 
 api_bp = Blueprint('api', __name__, url_prefix='/api')
@@ -21,7 +21,9 @@ def get_tasks():
 @api_bp.route('/tasks/<int:task_id>', methods=['GET'])
 def get_task(task_id):
     """Get a specific task by ID."""
-    task = Task.query.get_or_404(task_id)
+    task = db.session.get(Task, task_id)
+    if task is None:
+        abort(404)
     return jsonify({
         'success': True,
         'task': task.to_dict()
@@ -54,7 +56,10 @@ def create_task():
 @api_bp.route('/tasks/<int:task_id>', methods=['PUT'])
 def update_task(task_id):
     """Update an existing task."""
-    task = Task.query.get_or_404(task_id)
+    task = db.session.get(Task, task_id)
+    if task is None:
+        abort(404)
+    
     data = request.get_json()
     
     if 'title' in data:
@@ -74,7 +79,10 @@ def update_task(task_id):
 @api_bp.route('/tasks/<int:task_id>', methods=['DELETE'])
 def delete_task(task_id):
     """Delete a task."""
-    task = Task.query.get_or_404(task_id)
+    task = db.session.get(Task, task_id)
+    if task is None:
+        abort(404)
+        
     db.session.delete(task)
     db.session.commit()
     

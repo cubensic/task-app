@@ -68,17 +68,17 @@
   - [x] Write tests for database models (`test_models.py`)
   - [x] Write tests for API endpoints (`test_routes.py`)
 
-- [ ] **Integration testing**
-  - [ ] Write integration tests (`test_app.py`)
-  - [ ] Test complete task lifecycle (create, update, delete)
-  - [ ] Test filtering functionality
-  - [ ] Ensure at least 80% test coverage
+- [x] **Integration testing**
+  - [x] Write integration tests (`test_app.py`)
+  - [x] Test complete task lifecycle (create, update, delete)
+  - [x] Test filtering functionality
+  - [x] Ensure at least 80% test coverage
 
-- [ ] **Bug fixing and refinement**
-  - [ ] Address issues found during testing
-  - [ ] Refactor code as needed
-  - [ ] Optimize database queries if necessary
-  - [ ] Ensure UI responsiveness
+- [x] **Bug fixing and refinement**
+  - [x] Address issues found during testing (SQLAlchemy Query.get() deprecation warnings)
+  - [x] Refactor code as needed (Updated routes.py to use modern SQLAlchemy patterns)
+  - [x] Optimize database queries if necessary
+  - [x] Ensure UI responsiveness
 
 ## Phase 4: Deployment (Days 8-9)
 

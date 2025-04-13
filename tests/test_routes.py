@@ -162,7 +162,7 @@ def test_update_task(client, sample_task):
     
     # Check that task was actually updated in database
     with client.application.app_context():
-        task = Task.query.get(sample_task)
+        task = db.session.get(Task, sample_task)
         assert task.title == 'Updated Title'
         assert task.status == 'completed'
 
@@ -195,7 +195,7 @@ def test_delete_task(client, sample_task):
     
     # Check that task was actually deleted from database
     with client.application.app_context():
-        task = Task.query.get(sample_task)
+        task = db.session.get(Task, sample_task)
         assert task is None
 
 def test_delete_nonexistent_task(client):

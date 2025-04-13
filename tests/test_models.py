@@ -58,7 +58,7 @@ def test_task_update(app):
         db.session.commit()
         
         # Retrieve updated task and verify changes
-        updated_task = Task.query.get(task_id)
+        updated_task = db.session.get(Task, task_id)
         assert updated_task.title == 'Updated Title'
         assert updated_task.description == 'Updated Description'
         assert updated_task.status == 'completed'
@@ -79,7 +79,7 @@ def test_task_deletion(app):
         db.session.commit()
         
         # Verify task no longer exists
-        deleted_task = Task.query.get(task_id)
+        deleted_task = db.session.get(Task, task_id)
         assert deleted_task is None
 
 def test_timestamps(app):
