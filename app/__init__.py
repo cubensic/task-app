@@ -10,6 +10,11 @@ def create_app(config_name='default'):
     from config.config import config
     
     app = Flask(__name__)
+    
+    @app.route('/ping')
+    def ping():
+        return "Pong 🏓"
+    
     app.config.from_object(config[config_name])
     
     # Initialize app with config-specific setup
