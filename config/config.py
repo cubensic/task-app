@@ -25,10 +25,11 @@ class TestingConfig(Config):
 
 class ProductionConfig(Config):
     """Production configuration."""
-    SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')
+    # Use DATABASE_URL which Railway provides, with fallback to SQLALCHEMY_DATABASE_URI
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or os.environ.get('SQLALCHEMY_DATABASE_URI')
     DEBUG = False
     LOG_LEVEL = os.environ.get('LOG_LEVEL', 'ERROR')
-    LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT', 'false').lower() == 'true'
+    LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT', 'true').lower() == 'true'
 
     @classmethod
     def init_app(cls, app):

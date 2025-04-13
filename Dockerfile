@@ -20,11 +20,12 @@ RUN echo "Rebuild on $(date)"
 # Copy project files
 COPY . .
 
-# Run database migrations
-RUN flask db upgrade
-
 # Expose port
 EXPOSE 5000
 
-# Start gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "wsgi:app"] 
+# Debugging - echo environment variables
+RUN echo "Environment check"
+RUN printenv | grep -E 'DATABASE|FLASK|SQLALCHEMY'
+
+# Start gunicorn with more detailed logging
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--log-level", "debug", "wsgi:app"] 

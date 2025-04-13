@@ -36,8 +36,10 @@ def create_app(config_name='default'):
     @app.route('/')
     def index():
         try:
+            app.logger.info('Attempting to render index template')
             return render_template('index.html')
         except Exception as e:
+            app.logger.error(f"Template error: {e}")
             return f"Template error: {e}", 500
     
     return app 
