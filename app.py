@@ -1,5 +1,7 @@
 import os
 from app import create_app
+from flask import Flask
+app = Flask(__name__)
 
 # Get the environment from the environment variable, default to development
 env = os.environ.get('FLASK_ENV', 'development')
