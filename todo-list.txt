@@ -2,71 +2,71 @@
 
 ## Phase 1: Setup (Days 1-2)
 
-- [ ] **Project initialization**
-  - [ ] Create Git repository
-  - [ ] Set up project structure
-  - [ ] Create `.gitignore` file
-  - [ ] Initialize README.md
+- [x] **Project initialization**
+  - [x] Create Git repository
+  - [x] Set up project structure
+  - [x] Create `.gitignore` file
+  - [x] Initialize README.md
 
-- [ ] **Environment configuration**
-  - [ ] Create virtual environment
-  - [ ] Install Flask and dependencies
-  - [ ] Set up SQLAlchemy
-  - [ ] Configure environment variables for development
+- [x] **Environment configuration**
+  - [x] Create virtual environment
+  - [x] Install Flask and dependencies
+  - [x] Set up SQLAlchemy
+  - [x] Configure environment variables for development
 
-- [ ] **Database setup**
-  - [ ] Create database models (`models.py`)
-  - [ ] Implement task schema
-  - [ ] Set up SQLite for development/testing
-  - [ ] Create database migration scripts
+- [x] **Database setup**
+  - [x] Create database models (`models.py`)
+  - [x] Implement task schema
+  - [x] Set up SQLite for development/testing
+  - [x] Create database migration scripts
 
-- [ ] **Project configuration**
-  - [ ] Create `config.py` for multiple environments
-  - [ ] Set up development configuration
-  - [ ] Set up testing configuration
-  - [ ] Prepare production configuration structure
+- [x] **Project configuration**
+  - [x] Create `config.py` for multiple environments
+  - [x] Set up development configuration
+  - [x] Set up testing configuration
+  - [x] Prepare production configuration structure
 
 ## Phase 2: Core Development (Days 3-5)
 
-- [ ] **Backend API development**
-  - [ ] Create main application file (`app.py`)
-  - [ ] Implement GET /api/tasks endpoint
-  - [ ] Implement GET /api/tasks/{id} endpoint
-  - [ ] Implement POST /api/tasks endpoint
-  - [ ] Implement PUT /api/tasks/{id} endpoint
-  - [ ] Implement DELETE /api/tasks/{id} endpoint
-  - [ ] Implement filtering by status
+- [x] **Backend API development**
+  - [x] Create main application file (`app.py`)
+  - [x] Implement GET /api/tasks endpoint
+  - [x] Implement GET /api/tasks/{id} endpoint
+  - [x] Implement POST /api/tasks endpoint
+  - [x] Implement PUT /api/tasks/{id} endpoint
+  - [x] Implement DELETE /api/tasks/{id} endpoint
+  - [x] Implement filtering by status
 
-- [ ] **Frontend structure**
-  - [ ] Create basic HTML template (`index.html`)
-  - [ ] Set up CSS styling (responsive design)
-  - [ ] Implement header and main layout
-  - [ ] Create task input form
-  - [ ] Create filter tabs (All/Active/Completed)
-  - [ ] Design task list display
+- [x] **Frontend structure**
+  - [x] Create basic HTML template (`index.html`)
+  - [x] Set up CSS styling (responsive design)
+  - [x] Implement header and main layout
+  - [x] Create task input form
+  - [x] Create filter tabs (All/Active/Completed)
+  - [x] Design task list display
 
-- [ ] **Frontend JavaScript**
-  - [ ] Create main JS file
-  - [ ] Implement fetchTasks() function
-  - [ ] Implement createTask() function
-  - [ ] Implement updateTask() function
-  - [ ] Implement deleteTask() function
-  - [ ] Implement toggleStatus() function
-  - [ ] Implement renderTasks() function
-  - [ ] Implement filterTasks() function
+- [x] **Frontend JavaScript**
+  - [x] Create main JS file
+  - [x] Implement fetchTasks() function
+  - [x] Implement createTask() function
+  - [x] Implement updateTask() function
+  - [x] Implement deleteTask() function
+  - [x] Implement toggleStatus() function
+  - [x] Implement renderTasks() function
+  - [x] Implement filterTasks() function
 
-- [ ] **Database integration**
-  - [ ] Connect Flask routes to database operations
-  - [ ] Implement error handling for database operations
-  - [ ] Test database connections
+- [x] **Database integration**
+  - [x] Connect Flask routes to database operations
+  - [x] Implement error handling for database operations
+  - [x] Test database connections
 
 ## Phase 3: Testing (Days 6-7)
 
-- [ ] **Unit testing**
-  - [ ] Set up testing framework
-  - [ ] Create test database configuration
-  - [ ] Write tests for database models (`test_models.py`)
-  - [ ] Write tests for API endpoints (`test_routes.py`)
+- [x] **Unit testing**
+  - [x] Set up testing framework
+  - [x] Create test database configuration
+  - [x] Write tests for database models (`test_models.py`)
+  - [x] Write tests for API endpoints (`test_routes.py`)
 
 - [ ] **Integration testing**
   - [ ] Write integration tests (`test_app.py`)
@@ -84,9 +84,9 @@
 
 - [ ] **Deployment preparation**
   - [ ] Create Dockerfile
-  - [ ] Create requirements.txt
+  - [x] Create requirements.txt
   - [ ] Set up Procfile for Heroku (if using)
-  - [ ] Prepare database migration for production
+  - [x] Prepare database migration for production
 
 - [ ] **Environment configuration**
   - [ ] Set up production environment variables
@@ -132,8 +132,8 @@
 
 ## Milestone Checklist
 
-- [ ] **M1: Project setup complete** (End of day 2)
-- [ ] **M2: Core functionality implemented** (End of day 5)
+- [x] **M1: Project setup complete** (End of day 2)
+- [x] **M2: Core functionality implemented** (End of day 5)
 - [ ] **M3: Testing complete** (End of day 7)
 - [ ] **M4: Initial deployment complete** (End of day 9)
 - [ ] **M5: Project documentation complete** (End of day 10)
