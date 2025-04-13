@@ -30,6 +30,9 @@ def create_app(config_name='default'):
     # Add main route
     @app.route('/')
     def index():
-        return render_template('index.html')
+        try:
+            return render_template('index.html')
+        except Exception as e:
+            return f"Template error: {e}", 500
     
     return app 
